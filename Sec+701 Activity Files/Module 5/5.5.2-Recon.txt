@@ -1,0 +1,6 @@
+5.5.2 ACTIVITY - Performing Active Reconnaissance
+
+nmap <your subnet ID>
+nmap -A <your subnet ID>
+
+

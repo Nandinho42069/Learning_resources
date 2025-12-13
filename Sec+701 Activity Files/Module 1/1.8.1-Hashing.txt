@@ -1,0 +1,11 @@
+Activity 1.8.1 - Verifying Integrity with Hashing
+
+https://encode-decode.com/hashing-functions/ 
+
+Get-FileHash .\xp_pro_w_sp2_slipstreamed.iso -algorithm sha1
+
+ls
+cd Desktop
+ls
+sha1sum xp_pro_w_sp2_slipstreamed.iso
+md5sum xp_pro_w_sp2_slipstreamed.iso

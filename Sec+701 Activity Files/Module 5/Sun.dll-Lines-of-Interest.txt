@@ -1,0 +1,26 @@
+Sun.dll lines of interest
+
+Lines 270 – 292
+These perform a number of checks to ensure the code is running in the right environment.
+
+Line 274
+“17291806236368054941UL” is a hash for the name of the malware “solarwinds.businesslayerhost.exe”
+
+End of line 274
+“288, 366” indicates the number of hours (12 to 14 days) that the malware should lie dormant after the infected update is received. 
+
+Lines 1135 – 1158
+Changes ownership on registry keys so permissions can be changed.
+
+Lines 1163 – 1182
+Changes permissions on registry keys so they can be modified/disabled.
+
+Lines 1451 – 1494
+Checks for security related software and settings in the registry. It compares what it finds to the hashed list (lines 42 – 97).
+
+Lines 2271 – 2304
+The backdoor on the victim contacts the attacker’s C&C (Command and Control) Server.
+If the communication is successful, the server responds with an encoded command which is parsed (interpreted) by the backdoor.
+
+Lines 2471 – 2591
+This is a list of possible commands (decoded) that the C&C server will send to the backdoor.

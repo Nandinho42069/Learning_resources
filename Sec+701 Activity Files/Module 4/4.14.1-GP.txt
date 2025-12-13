@@ -1,0 +1,4 @@
+4.14.1 ACTIVITY - Examining Windows Group Policy
+
+Open the Edit Group Policy tool.
+

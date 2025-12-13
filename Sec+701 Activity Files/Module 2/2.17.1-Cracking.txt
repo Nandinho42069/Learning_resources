@@ -1,0 +1,13 @@
+2.17.1 Activity - Password Cracking
+
+cd /usr/share/wordlists
+ls
+sudo gunzip rockyou.txt.gz
+ls
+ls -l
+cd ~
+clear
+hashcat -m 1000 -a 0 -o ~/Desktop/cracked.txt ~Desktop/ntlmhashes.txt /usr/share/wordlists/rockyou.txt
+----------------------------------------------------------------------------------------------------
+NOTE: If you get a message that some hashes were found in the potfile, remove the potfile:
+rm ~/.local/share/hashcat/hashcat.potfile

@@ -1,0 +1,11 @@
+Activity 2.2.2 - O.MG - No Cable
+
+
+msfadmin
+msfadmin
+ifconfig
+
+sudo chmod -R 777 /var/www/
+
+http://<Metasploitable IP>
+http://<Metasploitable IP?/hashdump.ps1.txt

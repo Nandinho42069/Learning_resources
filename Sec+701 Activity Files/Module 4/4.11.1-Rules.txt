@@ -1,0 +1,59 @@
+4.11.1 ACTIVITY - Configuring Firewall Rules
+
+Objective:
+
+Configure the router as a packet-filtering firewall with the following rules:
+
+1. Admin cannot send or receive email (smtp, pop3)
+2. Admin can FTP to the Web/FTP server
+3. No one else can FTP to any server
+4. Bob and Alice cannot ping any server
+5. The KIOSK cannot be used to connect anywhere on the 192.168.2.0/24 subnet
+6. All other IP traffic is permitted
+
+------------------------------------------------------------------------
+
+Cisco Commands
+
+Router CLI:
+
+enable
+configure terminal
+int g0/0
+ip address 192.168.1.1 255.255.255.0
+no shut
+exit
+int g0/1
+ip address 192.168.2.1 255.255.255.0
+no shut
+exit
+
+ip access-list extended 101
+deny tcp host 192.168.1.102 any eq 25
+deny tcp host 192.168.1.102 any eq 110
+permit tcp host 192.168.1.102 host 192.168.2.100 eq 21
+deny tcp any any eq 21
+deny icmp 192.168.1.100 0.0.0.0 192.168.2.0 0.0.0.255
+deny icmp 192.168.1.101 0.0.0.0 192.168.2.0 0.0.0.255
+deny ip host 192.168.1.103 any
+permit ip any any
+
+exit
+int g0/0
+ip access-group 101 in
+end
+write
+show ip access-list 101
+show ip int g0/0
+
+
+---------------------------------------
+If you make a mistake:
+erase start
+<enter>
+reload 
+no
+<enter>
+<enter>
+no
+<enter>

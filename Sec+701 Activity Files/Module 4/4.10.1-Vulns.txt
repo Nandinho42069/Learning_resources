@@ -1,0 +1,8 @@
+4.10.1 ACTIVITY - Scanning a Network for Vulnerabilities
+
+sudo apt install openvas
+sudo gvm-setup
+
+sudo gvm-check-setup
+
+https://localhost:9392

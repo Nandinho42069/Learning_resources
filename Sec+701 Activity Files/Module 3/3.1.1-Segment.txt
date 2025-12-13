@@ -1,0 +1,57 @@
+3.1.1 ACTIVITY - Segmenting a Network
+
+Objective:
+- Segment a network of 4 PCs on a single multilayer switch into two VLANs
+- Then connect the VLANs via a router (on the switch)
+
+STEPS:
+
+1. Configure a Cisco 3560 Multilayer Switch with VLAN 10 and 20
+2. Connect two PCs to VLAN 10
+3. Connect two PCs to VLAN 20
+4. Configure IP settings on the PCs per the diagram
+5. Verify that the PCs can ping within the same VLAN, but not to the other VLAN
+6. Configure the switch with VLAN 10 and VLAN 20 interfaces, with IP addresses per the diagram
+7. Ensure that the PCs use the respective VLAN interfaces as their default gateway
+8. Configure the switch to perform VLAN routing between the two VLANs
+9. Verify that the PCs can ping across VLANs
+
+ipconfig
+ping 192.168.10.11
+ping 192.168.10.10
+ping 192.168.10.11
+ping 192.168.10.13
+
+-----------------------------------------------------------------------------------------
+Cisco switch commands:
+
+enable
+configure terminal
+ip routing
+vlan 10
+exit
+vlan 20
+exit
+int vlan 10
+ip address 192.168.10.1  255.255.255.0
+no shut
+exit
+int vlan 20
+ip address 192.168.20.1 255.255.255.0
+no  shut
+exit
+int range fa0/1-2
+switchport mode access
+switchport access vlan 10
+exit
+int range fa0/23-24
+switchport mode access
+switchport access vlan 20
+end
+write
+
+--------------------------------------------------------------------------------------
+If you make a mistake:
+
+erase start
+<enter>

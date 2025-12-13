@@ -1,0 +1,8 @@
+Activity 2.10.1 - Capturing Credentials through Social Engineering
+
+sudo apt-get update
+kali
+sudo apt-get install thunderbird
+ifconfig
+thunderbird
+http://<Kali IP Address>
